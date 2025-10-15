@@ -8,13 +8,9 @@ import jakarta.persistence.Persistence;
 
 import java.time.LocalDate;
 
-/**
- * Clase principal para ejecutar la aplicación de gestión de empleados
- */
 public class Main {
     
     public static void main(String[] args) {
-        // Crear el EntityManagerFactory
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("EmpleadosPU");
         EntityManager em = emf.createEntityManager();
         

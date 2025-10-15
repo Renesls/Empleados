@@ -54,7 +54,6 @@ public class Empleado implements Serializable {
     @JoinColumn(name = "cargo_id")
     private Cargo cargo;
     
-    // Constructores
     public Empleado() {
     }
     
@@ -67,7 +66,6 @@ public class Empleado implements Serializable {
         this.activo = true;
     }
     
-    // Getters y Setters
     public Long getId() {
         return id;
     }
