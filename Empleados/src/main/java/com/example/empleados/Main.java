@@ -15,10 +15,8 @@ public class Main {
         EntityManager em = emf.createEntityManager();
         
         try {
-            // Iniciar transacción
             em.getTransaction().begin();
             
-            // 1. Crear y guardar un cargo
             Cargo cargo = new Cargo();
             cargo.setNombre("Desarrollador");
             cargo.setDescripcion("Desarrollo de software");
@@ -27,7 +25,6 @@ public class Main {
             em.persist(cargo);
             System.out.println("Cargo guardado: " + cargo.getNombre());
             
-            // 2. Crear y guardar un empleado
             Empleado empleado = new Empleado();
             empleado.setNombre("Rene");
             empleado.setApellido("Sandoval");
