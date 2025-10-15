@@ -6,9 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-/**
- * Entidad que representa un Empleado
- */
+
 @Entity
 @Table(name = "empleados")
 @NamedQueries({
@@ -52,7 +50,6 @@ public class Empleado implements Serializable {
     @Column(length = 500)
     private String direccion;
     
-    // Relación muchos a uno con Cargo
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cargo_id")
     private Cargo cargo;
