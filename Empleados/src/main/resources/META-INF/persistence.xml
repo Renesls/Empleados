@@ -7,23 +7,18 @@
     
     <persistence-unit name="EmpleadosPU" transaction-type="RESOURCE_LOCAL">
         
-        <!-- Entidades -->
         <class>com.example.empleados.model.Cargo</class>
         <class>com.example.empleados.model.Empleado</class>
-        
+
         <properties>
-            <!-- Configuración de la base de datos H2 -->
-            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:empleadosdb;DB_CLOSE_DELAY=-1"/>
-            <property name="jakarta.persistence.jdbc.user" value="sa"/>
-            <property name="jakarta.persistence.jdbc.password" value=""/>
-            
-            <!-- Propiedades de Hibernate -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/../import.sql"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.show_sql" value="false"/>
-            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
+
     </persistence-unit>
 </persistence>
 
